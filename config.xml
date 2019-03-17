@@ -105,7 +105,7 @@
 	<plugin name="cordova-universal-links-plugin" />
 	<plugin name="cordova-disable-http-cache" />
 	<plugin name="cordova-plugin-inappbrowser" />
-	<plugin name="onesignal-cordova-plugin" />
+	<gap:plugin name="onesignal-cordova-plugin" spec="2.4.5" source="npm" />
 	<plugin name="cordova-promise-polyfill" />
 	<platform name="android">
 		<icon qualifier="ldpi" src="www/res/icon/android/ldpi-icon.png" />
