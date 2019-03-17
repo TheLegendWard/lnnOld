@@ -1,0 +1,66 @@
+	<ion-view view-title=" {{ dashboard.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll scroll="true"   id="page-dashboard_singles" class="page-dashboard_singles">
+		
+    
+<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+
+<div class="list card">
+
+    <div class="item item-avatar">
+        <img alt="" ng-src="{{dashboard.x_gravatar}}" />
+        <h2 ng-bind-html="dashboard.title.rendered | to_trusted"></h2>
+        <p> {{ dashboard.x_date }}</p>		
+	</div>
+
+    <div class="item noborder">
+        <img class="full-image" ng-src="{{dashboard.x_featured_media_large}}" zoom-view="true" zoom-src="{{dashboard.x_featured_media_original}}"/>
+    </div>
+    
+    
+   	<div class="item noborder" ng-if="dashboard.x_metadata.video">
+		<div class="embed_container">
+            <video controls="controls" ng-src="{{ dashboard.x_metadata.video | trustUrl }}"></video>
+        </div>
+	</div>
+    
+	<div class="item noborder" ng-if="dashboard.x_metadata.youtube">
+	   <div class="embed_container">
+	       <iframe width="100%" ng-src="{{ 'https://www.youtube.com/embed/' + dashboard.x_metadata.youtube | trustUrl }}" frameborder="0" allowfullscreen>
+		   </iframe>
+	   </div>
+	</div>
+    
+    
+    <div class="item item-text-wrap noborder to_trusted {{ fontsize }}" 
+        ng-bind-html="dashboard.content.rendered | strHTML">
+    </div>
+    
+    <div class="item item-button" ng-if="dashboard.x_metadata.download">
+        <a class="button button-colorful ink-dark" ng-click="openURL(dashboard.x_metadata.download)">Download File</a>
+    </div>
+    
+    <div class="item noborder">
+        by <strong ng-bind-html="dashboard.x_author | strHTML"></strong>
+    </div>
+    
+</div>
+    
+    
+<div class="list card">
+	<div class="item tabs tabs-secondary tabs-icon-left tabs-stable">
+        <a class="tab-item" run-social-sharing message="{{dashboard.link}}"><i class="icon ion-android-share-alt"></i> Share</a>
+	    <a class="tab-item" ng-click="addToDbVirtual(dashboard);"><i class="icon ion-android-add-circle"></i> Add Bookmark</a> 
+        <a class="tab-item" ng-href="#/lnn/dashboard_bookmark"><i class="icon ion-ios-star"></i> Bookmarks</a>   
+    </div>
+</div>    
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

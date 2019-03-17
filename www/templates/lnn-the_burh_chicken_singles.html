@@ -1,0 +1,49 @@
+	<ion-view view-title=" {{ the_burh_chicken.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll scroll="true"   id="page-the_burh_chicken_singles" class="page-the_burh_chicken_singles">
+					<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+
+					<!-- heading-1 -->
+					<div class="item item-divider"  ng-bind-html="the_burh_chicken.title.rendered | to_trusted">{{the_burh_chicken.title.rendered}}</div>
+					<!-- ./heading-1 -->
+
+					<!-- text -->
+					<div class="item item-text-wrap"><span class="subdued" ><span class="icon ion-android-calendar"> {{the_burh_chicken.x_date}}</span></span></div>
+					<!-- ./text -->
+
+					<!-- text -->
+					<div class="item item-text-wrap"><span class="subdued" ><span class="icon ion-android-contact"> {{the_burh_chicken.x_author}}</span></span></div>
+					<!-- ./text -->
+
+					<!-- images -->
+					<div class="item noborder"><img class="full-image" ng-src="{{the_burh_chicken.x_featured_media_medium}}"  zoom-view="true" zoom-src="{{the_burh_chicken.x_featured_media_original}}"/></div>
+					<!-- ./images -->
+
+					<!-- to_trusted -->
+					<div class="item item-text-wrap noborder to_trusted {{ fontsize }}" ng-bind-html="the_burh_chicken.content.rendered | strHTML"></div>
+					<!-- ./to_trusted -->
+
+					<!-- text -->
+					<div class="item item-text-wrap"><span class="subdued" ><span class="icon ion-ios-pricetags"> {{the_burh_chicken.x_tags}}</span></span></div>
+					<!-- ./text -->
+
+					<!-- text -->
+					<div class="item item-text-wrap"><span class="subdued" ><span class="icon ion-bookmark"> {{the_burh_chicken.x_categories}}</span></span></div>
+					<!-- ./text -->
+
+					<!-- share_link -->
+					<div class="item">
+						<button run-social-sharing message="{{ the_burh_chicken.link }}" class="button button-small ion-android-share-alt button-outline button-positive icon-left">Share Link</button>
+					</div>
+					<!-- ./share_link -->
+
+					<!-- link -->
+					<div class="item item-button"><a class="button button-light ink-dark" ng-click="openURL(the_burh_chicken.link)">Link</a></div>
+					<!-- ./link -->
+			</div>
+			<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

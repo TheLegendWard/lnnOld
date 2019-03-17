@@ -1,0 +1,172 @@
+	<ion-view view-title="  " hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-home" class=" page-home">
+		<ion-view view-title=" " hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-dashboard" class=" page-dashboard">
+		
+
+  <!-- code Featured 1 Frontpage-->
+                <div class="catimg"> <img src="data/images/images/fpa.png" width="" height="" /></div>
+     
+     <div class="assertive-900-bg topslide slide-box-hero" ng-controller="frontpage_africaCtrl">
+           <ion-slides class="slide-box-hero-content" options="{slidesPerView:1,autoplay:10000,loop:1}" slider="data.slider">
+             <ion-slide-page class="slide-box-hero-item" ng-repeat="item in data_frontpage_africas | limitTo : 5:0" >
+               
+             <div class="slide-box-hero-container" style="">
+                        <a class="modimg" ng-href="#/lnn/frontpage_africa_singles/{{item.id}}"> <img alt="" class="full-image" src="{{item.x_featured_media}}" /></a>
+               <div class="padding caption">
+                 
+                 <a ng-href="#/lnn/frontpage_africa_singles/{{item.id}}"><h2 ng-bind-html="item.title.rendered | strHTML"></h2></a>
+               </div>
+             </div>
+             </ion-slide-page>
+           </ion-slides>
+       </div>
+     <!-- ./code Featured 1 Frontpage-->
+
+          
+          
+         <!--code Observer-->
+<div class="fea1b">
+<div ng-controller="observerCtrl">
+    <!-- code listing -->
+
+   <div class="catimg"> <img src="data/images/images/observer.png" width="" height="" /></div>
+<div class="row">
+  
+      <a class="item item-thumbnail item-text-wrap" ng-repeat="item in observers | limitTo : 4:0" ng-href="#/lnn/observer_singles/{{item.id}}" >
+      
+        <img ng-src="{{item.x_featured_media}}" />
+          <h3 ng-bind-html="item.title.rendered | to_trusted"></h3>
+          <span class="icon ion-android-calendar"> {{item.date| date:'EEE, MMM d'}}</span>
+      
+        
+      </a>
+    </div>
+  </div>
+</div>
+<!-- ./code Observer-->
+          
+          <!-- code Gnn code listing GNN Liberia -->
+
+
+<div ng-controller="gnn_liberiaCtrl">
+  <div class="catimg"> <img src="data/images/images/gnnheader.png" width="" height="" /></div>
+			<!-- code listing -->
+			<div class="list animate-none">
+				<a class="item item-thumbnail-right item-text-wrap" ng-repeat="item in gnn_liberias | limitTo : 4:0" ng-init="$last ? fireEvent() : null" href="#/lnn/gnn_liberia_singles/{{item.id}}" >
+<img alt="" class="full-image" ng-src="{{item.x_featured_media}}" />
+        	<h3 class="" ng-bind-html="item.title.rendered | to_trusted"></h3>
+					<p>
+						<span class="icon ion-android-calendar"> {{item.x_date}}</span>
+
+            </p>
+					
+				
+				</a>
+			</div>
+    </div>
+		<!-- ./code Gnn code listing GNN Liberia -->
+          
+          
+          <!-- code The Bush Chicken -->
+<div ng-controller="the_burh_chickenCtrl">
+  <div class="catimg"> <img src="data/images/images/bushchickenheader.png" width="" height="" /></div>
+			<!-- code listing -->
+			<div class="list animate-none">
+				<a class="item item-thumbnail-left item-text-wrap" ng-repeat="item in the_bush_chickens | limitTo : 4:0" ng-init="$last ? fireEvent() : null" ng-href="#/lnn/the_bush_chicken_singles/{{item.id}}" >
+
+	<img alt="" class="full-image" ng-src="{{item.x_featured_media}}" />
+          <h3 class="" ng-bind-html="item.title.rendered | to_trusted"></h3>
+					<p>
+						<span class="icon ion-android-calendar"> {{item.x_date}}</span>
+          </p>
+						
+				</a>
+			</div>
+			<!-- ./code listing -->
+    </div>
+    <!-- ./code The Bush Chicken -->
+          
+              
+            <!-- code LINA-->
+          
+   <div class="linablock">
+<div ng-controller="linaCtrl">
+<!-- code listing -->
+
+<div class="catimg"> <img src="data/images/images/lina.png" width="" height="" /></div>
+<div class="row">
+
+<a class="item item-thumbnail item-text-wrap" ng-repeat="item in linas | limitTo : 4:0" ng-href="#/lnn/lina_singles/{{item.id}}" >
+
+  <img ng-src="{{item.x_featured_media}}" />
+    <h3 ng-bind-html="item.title.rendered | to_trusted"></h3>
+    <span class="icon ion-android-calendar"> {{item.date| date:'EEE, MMM d'}}</span>
+
+  
+</a>
+</div>
+</div>
+</div>
+
+ <!-- ./code LINA--> 
+          
+ 
+          <!-- code Gnn code listing The News Newspaper -->
+
+
+<div ng-controller="the_news_newspaperCtrl">
+<div class="catimg"> <img src="data/images/images/thenews.png" width="" height="" /></div>
+<!-- code listing -->
+<div class="list animate-none">
+<a class="item item-thumbnail-right item-text-wrap" ng-repeat="item in the_news_newspaps | limitTo : 4:0" ng-init="$last ? fireEvent() : null" href="#/lnn/the_news_newspap_singles/{{item.id}}" >
+<img alt="" class="full-image" ng-src="{{item.x_featured_media}}" />
+<h3 class="" ng-bind-html="item.title.rendered | to_trusted"></h3>
+<p>
+  <span class="icon ion-android-calendar"> {{item.x_date}}</span>
+
+  </p>
+
+
+</a>
+</div>
+</div>
+<!-- ./code Gnn code listing The News Newspaper -->
+          
+          
+          
+ <!--code Billboard-->
+<div class="fea1b">
+<div ng-controller="the_liberian_billboardCtrl">
+  <!-- code listing -->
+
+ <div class="catimg"> <img src="data/images/images/billboard.png" width="" height="" /></div>
+<div class="row">
+
+    <a class="item item-thumbnail item-text-wrap" ng-repeat="item in billboards | limitTo : 4:0" ng-href="#/lnn/billboard_singles/{{item.id}}" >
+    
+      <img ng-src="{{item.x_featured_media}}" />
+        <h3 ng-bind-html="item.title.rendered | to_trusted"></h3>
+        <span class="icon ion-android-calendar"> {{item.date| date:'EEE, MMM d'}}</span>
+    
+      
+    </a>
+  </div>
+</div>
+</div>
+<!-- ./code Billboard-->
+          
+          
+          
+            
+          
+          </ion-content>
+		<!-- ./content -->
+</ion-view>
+
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

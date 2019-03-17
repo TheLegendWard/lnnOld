@@ -1,0 +1,41 @@
+	<ion-view view-title=" {{ gnn_liberia.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll scroll="true"   id="page-gnn_liberia_singles" class="page-gnn_liberia_singles">
+		<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+
+			<!-- images -->
+					<div class="itemn noborder"><img class="full-image" ng-src="{{gnn_liberia.x_featured_media_medium}}"/></div>
+					<!-- ./images -->	
+              
+              <!-- text -->
+					<div class="itemcatsingle"><span class="subdued" ><span class="icon ion-android-globe"> {{gnn_liberia.x_categories}}</span></span></div>
+					<!-- ./text -->
+              
+              <!-- heading-1 -->
+					<div class="item item-divider"  ng-bind-html="gnn_liberia.title.rendered | to_trusted">{{gnn_liberia.title.rendered}}</div>
+					<!-- ./heading-1 -->
+              
+
+				
+              	<div class="row dateshare">
+				<div class="col col-80">
+                  <span class="subdued" >{{gnn_liberia.x_date | date:'EEE, MMM d' }}</span>
+                  </div>
+                  
+			</div>
+
+              
+               
+					<!-- to_trusted -->
+					<div class="item item-text-wrap noborder to_trusted {{ fontsize }}" ng-bind-html="gnn_liberia.content.rendered | strHTML"></div>
+					<!-- ./to_trusted -->
+
+					
+			</div>
+			
+			<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

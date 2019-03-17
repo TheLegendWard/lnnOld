@@ -1,0 +1,55 @@
+	<ion-view view-title=" Frontpage Africa" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-frontpage_africa" class=" page-frontpage_africa">
+		
+			<!-- code refresh -->
+			<ion-refresher pulling-text="{{ 'Pull to refresh...' | translate }}"  on-refresh="doRefresh()"></ion-refresher>
+			<!-- ./code refresh -->
+			
+
+			<!-- code search -->
+			<ion-list class="list" >
+				<div class="item item-input">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input type="search" ng-model="filter_frontpage_africas" placeholder="{{ 'Search' | translate }}" aria-label="filter frontpage_africas" />
+				</div>
+			</ion-list>
+			<!-- ./code search -->
+
+
+			<!-- code listing -->
+			<div class="list animate-none">
+				<a class="item item-thumbnail-right light" ng-repeat="item in frontpage_africas | filter: first_param | filter:filter_frontpage_africas as results" ng-init="$last ? fireEvent() : null" ng-href="#/lnn/frontpage_africa_singles/{{item.id}}" >
+					<h1 ng-bind-html="item.title.rendered | to_trusted"></h1>
+					<img ng-src="{{item.x_featured_media}}" />
+						<span class="icon ion-android-calendar"> {{item.x_date}}</span>
+						<span class="icon ion-android-contact"> {{item.x_author}}</span>
+					<div class="to_trusted {{ fontsize }}" ng-bind-html="item.excerpt.rendered | strHTML"></div>
+						<span class="icon ion-ios-pricetags"> {{item.x_tags}}</span>
+						<span class="icon ion-bookmark"> {{item.x_categories}}</span>
+				</a>
+			</div>
+			<!-- ./code listing -->
+
+
+			<!-- code infinite scroll -->
+			<ion-list class="list">
+				<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+			</ion-list>
+			<!-- ./code infinite scroll -->
+
+
+			<!-- code search result not found -->
+			<ion-list class="list">
+				<div class="item" ng-if="results.length == 0" >
+					<p>{{ 'No results found...!' | translate }}</p>
+				</div>
+			</ion-list>
+			<!-- code search result not found -->
+
+
+
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

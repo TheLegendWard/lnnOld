@@ -1,0 +1,72 @@
+	<ion-view view-title=" LNN Posts" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-lnn_posts" class=" page-lnn_posts">
+		<!-- code refresh -->
+<ion-refresher pulling-text="{{ 'Pull to refresh...' | translate }}"  on-refresh="doRefresh()"></ion-refresher>
+<!-- ./code refresh -->
+
+<!-- code search -->
+<ion-list class="list" >
+  <div class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="search" ng-model="filter_posts" placeholder="{{ 'Search' | translate }}" aria-label="filter posts" />
+  </div>
+</ion-list>
+<!-- ./code search -->
+
+
+
+    <!-- code listing -->
+<div class="list animate-none">
+<div class="list card postlist" ng-repeat="item in posts | filter:filter_news_postss as results" ng-init="$last ? fireEvent() : null" >
+<div class="item item-body">
+<a class="item" ng-href="#/lnn/post_singles/{{item.id}}">
+<img alt="" class="full-image" src="{{item.x_featured_media_medium}}" />
+</a>
+   <!-- text -->
+					<div class="itemcatsingle"><span class="subdued" ><span class="icon ion-android-globe"> {{item.x_categories}}</span></span></div>
+					<!-- ./text -->
+</div>
+
+<a class="item" ng-href="#/lnn/post_singles/{{item.id}}"> 
+<h2 ng-bind-html="item.title.rendered | to_trusted"></h2></a>
+<div class="row dateshare">
+  <div class="col col-80">
+            <span class="subdued" >{{item.x_date | date:'EEE, MMM d' }}</span>
+            </div>
+            
+            <div class="col col-10">
+<a ng-controller="ShareCtrl" ng-click="shareAnywhere(item.title.rendered, null, item.x_featured_media_medium, 'https://itunes.apple.com/us/app/liberian-news-network-lnn/id1342376924?ls=1&mt=8')"><i class="icon ion-share"></i></a>
+</div>
+           
+</div>
+
+
+</div>
+</div>
+<!-- ./code listing -->
+<!-- code infinite scroll -->
+<ion-list class="list">
+  <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+</ion-list>
+<!-- ./code infinite scroll -->
+
+
+<!-- code search result not found -->
+<ion-list class="list">
+  <div class="item" ng-if="results.length == 0" >
+    <p>{{ 'No results found...!' | translate }}</p>
+  </div>
+</ion-list>
+<!-- code search result not found -->
+
+
+
+
+
+
+
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

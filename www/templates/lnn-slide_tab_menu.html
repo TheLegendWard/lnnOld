@@ -1,0 +1,27 @@
+	<ion-view view-title=" Menu" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-slide_tab_menu" class=" page-slide_tab_menu">
+			<div style="width: 100%;height:100%;">
+		<ion-slide-box class="ion-slide-tabs" slide-tabs-scrollable="false" show-pager="false" ion-slide-tabs>
+			<ion-slide ion-slide-tab-label="Help" >
+					<ion-content scroll="false" class="slidingTabContent">
+						<div class="list">
+							<a class="item item-icon-left" ng-href="#/lnn/faqs" >
+								<i class="icon ion-android-chat" ></i>
+								<h2>{{ "Faqs" | translate }}</h2>
+								<span class="item-note pull-left">FAQs and Tutorial</span>
+							</a>
+							<a class="item item-icon-left" ng-click="openURL('https://itunes.apple.com/us/app/liberian-news-network-lnn/id1342376924')" >
+								<i class="icon ion-android-playstore" ></i>
+								<h2>{{ "Rate This App" | translate }}</h2>
+								<span class="item-note pull-left">Taking a moment to rate this app?</span>
+							</a>
+						</div>
+					</ion-content>
+			</ion-slide>
+		</ion-slide-box>
+	</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
